@@ -6,7 +6,8 @@ import Body from "./components/Body";
 
 function App() {
   const [data, setData] = useState(undefined);
-  // const [poster, setPoster] = useState([]);
+  const [score, setScore] = useState(0);
+  const [clickedMovies, setClickedMovies] = useState([]);
 
   const fetchData = () => {
     fetch(
@@ -14,8 +15,6 @@ function App() {
     )
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data.cast[0]);
-        // setPoster(data.cast[0].poster_path);
         setData(data);
       });
   };
@@ -26,7 +25,13 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Body data={data} />
+      <Body
+        data={data}
+        setClickedMovies={setClickedMovies}
+        clickedMovies={clickedMovies}
+        setScore={setScore}
+        score={score}
+      />
     </div>
   );
 }

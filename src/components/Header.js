@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Card from "./Card";
 
 export default function Header() {
   return (
