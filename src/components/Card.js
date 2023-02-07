@@ -7,14 +7,14 @@ export default function Card({
   clickedMovies,
   score,
 }) {
-  const partialData = data.cast.slice(0, 12);
+
+  const partialData = data.cast.slice(0, 10)
   const cards = partialData.map((movie) => {
     return (
       <img
         key={movie.id}
         src={[`https://image.tmdb.org/t/p/original${movie.poster_path}`]}
         alt={movie.title}
-        height="350px"
         className="hvr-grow-shadow"
         onClick={() => {
           if (clickedMovies.includes(movie.title)) return setScore(0);

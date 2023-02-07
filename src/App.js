@@ -5,13 +5,13 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 
 function App() {
-  const [data, setData] = useState(undefined);
+  const [data, setData] = useState(null);
   const [score, setScore] = useState(0);
   const [clickedMovies, setClickedMovies] = useState([]);
 
   const fetchData = () => {
     fetch(
-      "https://api.themoviedb.org/3/person/31/movie_credits?api_key=" //add api key back
+      "https://api.themoviedb.org/3/person/31/movie_credits?" //add api key back
     )
       .then((res) => res.json())
       .then((data) => {

@@ -8,8 +8,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
-  width: 100vw;
   background-image: linear-gradient(
     0deg,
     hsl(216deg 18% 16%) 0%,
@@ -31,17 +29,14 @@
   color: rgb(217, 248, 247);
   font-family: "Berkshire Swash", sans-serif;
 }
-.container {
-  /* border: 1px solid red; */
-  width: 60vw;
-  height: 80vh;
-}
 
 #cards {
+  cursor: pointer;
   display: grid;
-  grid-template-columns: repeat(4, minmax(150px, 1fr));
+  grid-template-columns: repeat(5, max(150px));
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 1em;
+  gap: 2em;
+
 }
 
 .hvr-grow-shadow {
@@ -58,14 +53,68 @@
 .hvr-grow-shadow:hover,
 .hvr-grow-shadow:focus,
 .hvr-grow-shadow:active {
-  box-shadow: 0 10px 10px -10px rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 34px 13px rgba(5, 215, 234, 0.5);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
 
-.score-display {
-  color: var(--blue);
-  display: flex;
+.container{
+  display: grid;
+  justify-items: center;
+}
 
+.score-display {
+  color: rgb(217, 248, 247);
+  display: flex;
+  gap: 2em;
   justify-content: space-around;
 }
+
+
+@media only screen and (max-width: 850px) {
+  #cards {
+    display: grid;
+    grid-template-columns: repeat(3, max(150px));
+    grid-auto-rows: 1fr;
+  }
+  
+}
+
+
+
+@media only screen and (max-width: 550px) {
+  #cards {
+    display: grid;
+    grid-template-columns: repeat(2, max(150px));
+    grid-auto-rows: 1fr;
+  }
+  
+}
+
+.loader {
+  position: relative;
+  width:  48px;
+  height: 48px;
+  background: #de3500;
+  transform: rotateX(65deg) rotate(45deg);
+  transform: perspective(200px) rotateX(65deg) rotate(45deg); 
+  color: #fff;
+  animation: layers1 1s linear infinite alternate;
+}
+.loader:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.7);
+  animation: layerTr 1s linear infinite alternate;
+}
+
+@keyframes layers1 {
+  0% { box-shadow: 0px 0px 0 0px  }
+ 90% , 100% { box-shadow: 20px 20px 0 -4px  }
+}
+@keyframes layerTr {
+  0% { transform:  translate(0, 0) scale(1) }
+  100% {  transform: translate(-25px, -25px) scale(1) }
+}
+    

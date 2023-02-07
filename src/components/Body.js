@@ -13,6 +13,7 @@ export default function Body({
 
   return (
     <div className="container">
+      <div className="rules" style={{color: "rgb(217, 248, 247)", textAlign: "center", textDecoration: "underline"}}>Get points by clicking on an image, but don't click more than once on the same one</div>
       <div className="score-display">
         <h1>{[`Current Score: ${score} `]}</h1>
         <h1>
