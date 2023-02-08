@@ -19,7 +19,6 @@ export default function Card({
           if (clickedMovies.includes(movie.title)) return setScore(0);
           setClickedMovies([...clickedMovies, movie.title]);
           setScore(score + 1);
-          console.log(clickedMovies);
         }}
       ></img>
     );

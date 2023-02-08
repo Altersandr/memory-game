@@ -10,12 +10,17 @@ function App() {
   const [data, setData] = useState(null);
   const [score, setScore] = useState(0);
   const [clickedMovies, setClickedMovies] = useState([]);
+  const [movies, setMovies] = useState([]);
 
   const fetchData = () => {
     fetch(`https://api.themoviedb.org/3/person/31/movie_credits?${config}`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);
+        data.cast.forEach((movie) => {
+          console.log(movie.id, movie.title);
+          console.log(movie);
+        });
       });
   };
   useEffect(() => {
