@@ -13,10 +13,20 @@ export default function Body({
 
   return (
     <div className="container">
-      <div className="rules" style={{color: "rgb(217, 248, 247)", textAlign: "center", textDecoration: "underline"}}>Get points by clicking on an image, but don't click more than once on the same one</div>
-      <div className="score-display">
+      <div
+        className="rules"
+        style={{
+          color: "salmon",
+          textAlign: "center",
+          marginLeft: "-40px",
+        }}
+      >
+        Get points by clicking on an image, but don't click more than once on
+        the same one
+      </div>
+      <div className="score-display" style={{ marginRight: "-40px" }}>
         <h1>{[`Current Score: ${score} `]}</h1>
-        <h1>
+        <h1 style={{ color: "salmon" }}>
           {score > highestScore
             ? setHighestScore(score) && [`Highest Score: ${highestScore}`]
             : [`Highest Score: ${highestScore}`]}

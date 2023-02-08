@@ -3,6 +3,8 @@ import "./components/styles/App.css";
 import "./components/styles/Reset.css";
 import Header from "./components/Header";
 import Body from "./components/Body";
+import { config } from "./config";
+import { Footer } from "./components/Footer";
 
 function App() {
   const [data, setData] = useState(null);
@@ -10,9 +12,7 @@ function App() {
   const [clickedMovies, setClickedMovies] = useState([]);
 
   const fetchData = () => {
-    fetch(
-      "https://api.themoviedb.org/3/person/31/movie_credits?" //add api key back
-    )
+    fetch(`https://api.themoviedb.org/3/person/31/movie_credits?${config}`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -32,6 +32,7 @@ function App() {
         setScore={setScore}
         score={score}
       />
+      <Footer />
     </div>
   );
 }

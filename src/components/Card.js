@@ -7,8 +7,7 @@ export default function Card({
   clickedMovies,
   score,
 }) {
-
-  const partialData = data.cast.slice(0, 10)
+  const partialData = data.cast.slice(0, 12);
   const cards = partialData.map((movie) => {
     return (
       <img

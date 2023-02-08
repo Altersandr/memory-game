@@ -1,7 +1,5 @@
 import React from "react";
 
 export default function LoadingCard() {
-  return (
-    <span class="loader"></span>
-  );
+  return <span className="loader">L &nbsp; ading</span>;
 }
